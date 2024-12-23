@@ -1,6 +1,9 @@
 node_modules/
 .DS_Store
 docs/
+charts/
+demo/
+App2.vue*
 
 /dist/
 npm-debug.log*
