@@ -13,7 +13,7 @@ const iconColor = ref('color:#F8FAFB')
 
 
 <template>
-    <el-aside :width="settings.width">
+    <el-aside :width="settings.width" >
         <el-scrollbar>
             <el-menu :default-openeds="['1', '3']" :collapse="settings.collapse" active-text-color="#409EFF"
                 text-color="#74767A" router="true" style="background-color:#f5f6fa">

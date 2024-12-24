@@ -17,6 +17,21 @@ import AdminUserEdit from '../views/AdminUserEdit.vue';
 import AdminUserList from '../views/AdminUserList.vue';
 import UserList from '../views/UserList.vue';
 
+// import NProgress from 'nprogress';
+// import 'nprogress/nprogress.css';
+
+
+//全局进度条的配置 
+// NProgress.configure({ 
+//     easing: 'ease', // 动画方式 
+//     speed: 300, // 递增进度条的速度 
+//     showSpinner: false, // 进度环显示隐藏
+//     trickleSpeed: 200, // 自动递增间隔 
+//     minimum: 0.3, // 更改启动时使用的最小百分比 
+//     parent: 'body', //指定进度条的父容器 
+// });
+
+
 const routes = [{
         path: '/',
         component: LoginPage
@@ -112,6 +127,20 @@ const router = createRouter({
     routes,
     history: createWebHistory() // history 模式
     // history: createWebHashHistory()   // hash 模式
+});
+
+/** 此处只添加路由进度条动画 */
+router.beforeEach((to, from, next) => {
+    // NProgress.start();
+    next();
+});
+router.afterEach(() => {
+    // NProgress.done();
+    /** 清除loading标记 */
+    let loadingEl = document.querySelector('#html-loading-el');
+    if (loadingEl) {
+        loadingEl.remove();
+    }
 });
 
 export default router;

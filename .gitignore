@@ -1,4 +1,5 @@
 node_modules/
+
 .DS_Store
 docs/
 charts/
@@ -9,6 +10,7 @@ App2.vue*
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+README笔记.md*
 
 # Editor directories and files
 .idea
