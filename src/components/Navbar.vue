@@ -176,6 +176,7 @@ import { useRouter } from "vue-router";
 import SvgIcon from "@/components/svgIcon/index.vue";
 import img_1 from "@/assets/logo.png";
 import { ElMessageBox } from "element-plus";
+import {toggleFullScreen} from "@/common/OtherTools";
 
 // 定义 props
 const props = defineProps({
