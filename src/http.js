@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useRouter } from 'vue-router';
-import { ElLoading } from 'element-plus';
+import { ElLoading,ElMessage } from 'element-plus';
 
 // 创建一个全局的 loading 实例
 let loadingInstance = null;
@@ -36,6 +36,7 @@ http.interceptors.request.use(function (config) {
   }
   return config;
 }, function (error) {
+  hideLoading();
   // Do something with request error
   return Promise.reject(error);
 });
@@ -46,19 +47,23 @@ http.interceptors.response.use(res => {
   hideLoading();
   return res;
 }, err => {
+
   console.log(err.response.data.message);
   // 这里不再使用Vue.prototype.$message，而是通过传入的app实例来调用$message
-  app.config.globalProperties.$message({
+  ElMessage({
+    showClose: true,
+    message: err.response.data.message,
     type: 'error',
-    message: err.response.data.message
   });
-
+ 
+  
   console.log(err.response);
   if (err.response.status === 401) {
     // 跳转到登录页
     const router = useRouter();
     router.push('/');
   }
+  hideLoading();
   return Promise.reject(err);
 });
 

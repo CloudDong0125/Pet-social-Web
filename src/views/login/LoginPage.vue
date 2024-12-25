@@ -70,6 +70,8 @@ import { ElMessage } from 'element-plus';
 
 const isTyping = ref(true);
 const isFormVisible = ref(false); // 添加一个新的ref来控制表单的显示
+
+
 const instance = getCurrentInstance();
 const $http = instance.appContext.config.globalProperties.$http;
 const router = useRouter();
@@ -94,7 +96,7 @@ const onSubmit = async () => {
   console.log(res.data);
   localStorage.token = res.data.token; // 浏览器的存储，设置token
   // sessionStorage.token = res.data.token; // 浏览器的不存储
-  router.push('../home'); // 跳转页面
+  router.push('/'); // 跳转页面
 
   ElMessage({
     showClose: true,

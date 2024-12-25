@@ -1,7 +1,7 @@
 # Pet-Social-Web
 
-基本布局搭建完成
+基本布局搭建：Aside\Menu\Navbar\TagList
 
+> ![image-20241224153734830](./assets/image-20241224153734830.png)
 
-
-<img src="./assets/image-20241224105357567.png" alt="image-20241224105357567" style="zoom: 33%;" />
+功能补充
