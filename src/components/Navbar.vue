@@ -11,7 +11,7 @@
       <div class="path-list-container">
         <el-breadcrumb separator="">
           <el-breadcrumb-item :to="{ path: '/main/index' }">
-            首页
+            {{ perRouterName }}
           </el-breadcrumb-item>
           <el-breadcrumb-item
             v-for="(item, index) in dataContainer.breadcrumbList"
@@ -101,7 +101,7 @@
         >
           <el-image
             class="img"
-            :src="dataContainer.userInfo.avatar"
+            :src="dataContainer.img.img_2"
             fit="cover"
           />
           <div class="name">
@@ -175,6 +175,7 @@ import {
 import { useRouter } from "vue-router";
 import SvgIcon from "@/components/svgIcon/index.vue";
 import img_1 from "@/assets/logo.png";
+import img_2 from "@/assets/logo.jpeg";
 import { ElMessageBox } from "element-plus";
 import {toggleFullScreen} from "@/common/OtherTools";
 
@@ -192,6 +193,10 @@ const props = defineProps({
     type: Boolean,
     default: true,
   },
+  perRouterName:{
+    type: String,
+    default: "",
+  }
 });
 
 // 定义 emits
@@ -211,6 +216,7 @@ const dataContainer = reactive({
   show_1: false,
   img: {
     img_1,
+    img_2
   },
 });
 

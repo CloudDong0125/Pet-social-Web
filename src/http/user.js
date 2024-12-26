@@ -80,7 +80,7 @@ const allApi = {
                 childs: [
                     {
                         path: '/main/iframe/https://github.com/CloudDong0125/',
-                        title: '一篇文字',
+                        title: '文档',
                         content: '有缓存',
                         iconName: 'img:logo.png',
                         showTagIcon: true,
@@ -161,10 +161,10 @@ const allApi = {
                 showTagIcon: true,
             },
             {
-                title: '一篇文字',
+                title: '文档',
                 iconName: 'svg:friendship.svg',
                 isLink: true,
-                path: 'https://www.dumogu.top/',
+                path: 'https://github.com/CloudDong0125/Pet-social-Web/blob/main/README.md',
             },
         ];
         return Promise.resolve({

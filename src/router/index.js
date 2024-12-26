@@ -42,74 +42,21 @@ export const constantRoutes = [
     /** 定义首页重定向地址 */
     {
         path: '',
-        redirect: '/main',
+        redirect: '/main/index',
     },
     /** 其他业务相关页面 */
     {
-        path: '/main',
+        path: '/layout',
+        name:'layout', 
         component: () => import('@/layout/main/index.vue'),
         children: [
-            /**
-             * 重定向页面
-             * 用来刷新标签页
-             *  */
-            {
-                path: 'redirect/:path(.*)',
-                name: 'main-redirect',
-                component: () => import('@/views/system/redirect/index.vue'),
-                meta: {
-                    layoutName: 'main',
-                    redirectName: 'main-redirect',
-                },
-            },
-            {
-                path: '401',
-                name: 'main-401',
-                component: () => import('@/views/system/error/401.vue'),
-                meta: {
-                    layoutName: 'main',
-                    redirectName: 'main-redirect',
-                    hasTag: true,
-                    title: '401',
-                },
-            },
-            {
-                path: '404',
-                name: 'main-404',
-                component: () => import('@/views/system/error/404.vue'),
-                meta: {
-                    layoutName: 'main',
-                    redirectName: 'main-redirect',
-                    hasTag: true,
-                    title: '404',
-                },
-            },
-            {
-                path: 'new-tag-page/:sign',
-                component: () => import('@/views/system/newTagPage/index.vue'),
-                name: 'new-tag-page',
-                meta: {
-                    layoutName: 'main',
-                    redirectName: 'main-redirect',
-                    title: '新标签',
-                    hasTag: true,
-                },
-            },
-            {
-                path: 'iframe/:sign(.*)',
-                component: () => import('@/views/system/iframe/index.vue'),
-                name: 'iframe',
-                meta: {
-                    layoutName: 'main',
-                    redirectName: 'main-redirect',
-                    hasTag: true,
-                },
-            },
+            
             /** 一些页面例子 */
             {
                 path: '/main/index',
                 component: () => import('@/views/system/main/index.vue'),
-                name: 'main',
+                name: '首页',
+                iconName:"svg:sy.svg",
                 meta: {
                     layoutName: 'main',
                     redirectName: 'main-redirect',
@@ -120,6 +67,7 @@ export const constantRoutes = [
                 path: '/main/categoryEdit/:id',
                 component: () => import('@/views/system/main/categoryEdit.vue'),
                 name: '新建分类',
+                iconName:"svg:fl.svg",
                 meta: {
                     layoutName: 'categoryEdit',
                     redirectName: 'categoryEdit-redirect',
@@ -129,7 +77,8 @@ export const constantRoutes = [
             {
                 path: '/main/categoryList',
                 component: () => import('@/views/system/main/categoryList.vue'),
-                name: 'categoryList',
+                name: '分类列表',
+                iconName:"svg:fl.svg",
                 meta: {
                     layoutName: 'categoryList',
                     redirectName: 'categoryList-redirect',
@@ -233,6 +182,62 @@ export const constantRoutes = [
             },
 
 
+            /**
+             * 重定向页面
+             * 用来刷新标签页
+             *  */
+            {
+                path: 'redirect/:path(.*)',
+                name: 'main-redirect',
+                component: () => import('@/views/system/redirect/index.vue'),
+                meta: {
+                    layoutName: 'main',
+                    redirectName: 'main-redirect',
+                },
+            },
+            {
+                path: '401',
+                name: 'main-401',
+                component: () => import('@/views/system/error/401.vue'),
+                meta: {
+                    layoutName: 'main',
+                    redirectName: 'main-redirect',
+                    hasTag: true,
+                    title: '401',
+                },
+            },
+            {
+                path: '404',
+                name: 'main-404',
+                component: () => import('@/views/system/error/404.vue'),
+                meta: {
+                    layoutName: 'main',
+                    redirectName: 'main-redirect',
+                    hasTag: true,
+                    title: '404',
+                },
+            },
+            {
+                path: 'new-tag-page/:sign',
+                component: () => import('@/views/system/newTagPage/index.vue'),
+                name: 'new-tag-page',
+                meta: {
+                    layoutName: 'main',
+                    redirectName: 'main-redirect',
+                    title: '新标签',
+                    hasTag: true,
+                },
+            },
+            {
+                path: 'iframe/:sign(.*)',
+                component: () => import('@/views/system/iframe/index.vue'),
+                name: 'iframe',
+                meta: {
+                    layoutName: 'main',
+                    redirectName: 'main-redirect',
+                    hasTag: true,
+                },
+            },
             {
                 path: 'icon-list',
                 component: () => import('@/views/system/iconList/index.vue'),
