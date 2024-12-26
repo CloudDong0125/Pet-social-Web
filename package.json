@@ -11,6 +11,7 @@
   "dependencies": {
     "@element-plus/icons-vue": "^2.3.1",
     "axios": "^1.7.8",
+    "copy-to-clipboard": "^3.3.3",
     "echarts": "^5.4.0",
     "element-plus": "^2.9.1",
     "pinia": "^2.2.8",

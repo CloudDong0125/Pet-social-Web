@@ -38,11 +38,9 @@
               :style="'width: 17px;min-width:17px;height: 17px;'"
               :name="dataInfo.iconName"
             ></SvgIcon>
-            {{ dataInfo.title }}
+            {{ dataInfo.title }}  <span v-if="dataInfo.content" class="content" style="color: #818c96;font-size: 10px;">{{ dataInfo.content }}</span>
           </div>
-          <div v-if="dataInfo.content" class="content">
-            {{ dataInfo.content }}
-          </div>
+        
           <div v-if="dataInfo.number" class="sign">
             {{ dataInfo.number }}
           </div>

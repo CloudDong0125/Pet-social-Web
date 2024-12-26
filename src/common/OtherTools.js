@@ -1,7 +1,7 @@
 /**
  * 一些常用的其他函数工具
  */
-// import copy from 'copy-to-clipboard';
+import copy from 'copy-to-clipboard';
 
 export function setBaseSize(baseSize) {
     baseSize = Number(baseSize) || 16;

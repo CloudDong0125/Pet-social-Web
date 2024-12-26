@@ -180,6 +180,16 @@ export const constantRoutes = [
                     hasTag: true,
                 },
             },
+            {
+                path: '/iconList/svgList',
+                component: () => import('@/views/system/iconList/svgList.vue'),
+                name: 'SVG列表展示',
+                meta: {
+                    layoutName: 'svgList',
+                    redirectName: 'svgList-redirect',
+                    hasTag: true,
+                },
+            },
 
 
             /**
