@@ -64,12 +64,16 @@
     }
     /** 内容体 */
     >.page-content-box{
+        padding:20px 10px;
         flex:1 0 0;
         height: 0;
         border-radius: 5px;
         overflow: hidden;
         background-color: white;
     }
+}
+.mt20 {
+    margin-top: 30px;
 }
 #app{
     width: 100vw;

@@ -183,7 +183,7 @@ const dataContainer = reactive({
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.177);
             background-color: var(--bg-color-2);
             transition: width 0.2s;
-            overflow: hidden;
+            overflow: auto;
 
             &.hidden {
                 width: 0;

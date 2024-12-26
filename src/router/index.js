@@ -117,25 +117,122 @@ export const constantRoutes = [
                 },
             },
             {
-                path: '/main/category',
-                component: () => import('@/views/system/main/category.vue'),
-                name: 'category',
+                path: '/main/categoryEdit/:id',
+                component: () => import('@/views/system/main/categoryEdit.vue'),
+                name: '新建分类',
                 meta: {
-                    layoutName: 'category',
-                    redirectName: 'category-redirect',
+                    layoutName: 'categoryEdit',
+                    redirectName: 'categoryEdit-redirect',
                     hasTag: true,
                 },
             },
             {
-                path: '/main/categoryEdit',
-                component: () => import('@/views/system/main/categoryEdit.vue'),
-                name: 'categoryEdit',
+                path: '/main/categoryList',
+                component: () => import('@/views/system/main/categoryList.vue'),
+                name: 'categoryList',
                 meta: {
-                    layoutName: 'categoryEdit',
-                    redirectName: 'category-redirect',
+                    layoutName: 'categoryList',
+                    redirectName: 'categoryList-redirect',
                     hasTag: true,
                 },
             },
+            
+            {
+                path: '/main/itemsEdit/:id',
+                component: () => import('@/views/system/main/itemsEdit.vue'),
+                name: '新建宠物',
+                meta: {
+                    layoutName: 'itemsEdit',
+                    redirectName: 'itemsEdit-redirect',
+                    hasTag: true,
+                },
+            },
+            {
+                path: '/main/itemsList',
+                component: () => import('@/views/system/main/itemsList.vue'),
+                name: '宠物列表',
+                meta: {
+                    layoutName: 'itemList',
+                    redirectName: 'itemList-redirect',
+                    hasTag: true,
+                },
+            },
+
+            {
+                path: '/main/articlesEdit/:id',
+                component: () => import('@/views/system/main/articlesEdit.vue'),
+                name: '新建文章',
+                meta: {
+                    layoutName: 'articlesEdit',
+                    redirectName: 'articlesEdit-redirect',
+                    hasTag: true,
+                },
+            },
+            {
+                path: '/main/articlesList',
+                component: () => import('@/views/system/main/articlesList.vue'),
+                name: '文章列表',
+                meta: {
+                    layoutName: 'articlesList',
+                    redirectName: 'articlesList-redirect',
+                    hasTag: true,
+                },
+            },
+
+            {
+                path: '/main/adsEdit/:id',
+                component: () => import('@/views/system/main/adsEdit.vue'),
+                name: '新建运营',
+                meta: {
+                    layoutName: 'adsEdit',
+                    redirectName: 'adsEdit-redirect',
+                    hasTag: true,
+                },
+            },
+            {
+                path: '/main/adsList',
+                component: () => import('@/views/system/main/adsList.vue'),
+                name: '运营列表',
+                meta: {
+                    layoutName: 'adsList',
+                    redirectName: 'adsList-redirect',
+                    hasTag: true,
+                },
+            },
+
+
+            {
+                path: '/main/adminUseEdit/:id',
+                component: () => import('@/views/system/adminUseEdit.vue'),
+                name: '新建管理员',
+                meta: {
+                    layoutName: 'adminUseEdit',
+                    redirectName: 'adminUseEdit-redirect',
+                    hasTag: true,
+                },
+            },
+            {
+                path: '/main/adminUseList',
+                component: () => import('@/views/system/main/adminUseList.vue'),
+                name: '管理员列表',
+                meta: {
+                    layoutName: 'adminUseList',
+                    redirectName: 'adminUseList-redirect',
+                    hasTag: true,
+                },
+            },
+            {
+                path: '/main/useList',
+                component: () => import('@/views/system/main/useList.vue'),
+                name: '用户列表',
+                meta: {
+                    layoutName: 'useList',
+                    redirectName: 'useList-redirect',
+                    hasTag: true,
+                },
+            },
+
+
             {
                 path: 'icon-list',
                 component: () => import('@/views/system/iconList/index.vue'),

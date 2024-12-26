@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-
     <!-- // transition标签是Vue内置动画标签，负责在插入、更新、移除DOM元素时，给元素添加样式【包裹要插入动画的div】 -->
     <transition name="fade-transform" mode="out-in">
       <router-view></router-view>
@@ -9,7 +8,7 @@
 </template>
 
 <script setup>
-import { RouterView } from 'vue-router';
+import { RouterView } from "vue-router";
 </script>
 
 <style scoped>
@@ -25,7 +24,7 @@ html {
 *,
 :after,
 :before {
-  box-sizing: inherit
+  box-sizing: inherit;
 }
 
 .fade-transform-leave-active,
