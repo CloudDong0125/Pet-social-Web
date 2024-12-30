@@ -3,7 +3,7 @@
       <div class="page-content-box">
       <h1>{{ id ? "编辑" : "新建" }}管理员</h1>
       <!-- 表单 -->
-      <el-form label-width="120px" @submit.native.prevent="save">
+      <el-form label-width="120px" @submit.native.prevent="save" class="mt20">
         <!-- 表单项目 -->
         <!-- 用户名 -->
         <el-form-item label="用户名">        

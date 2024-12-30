@@ -15,15 +15,15 @@
                     </div>
                 </div>
                 <div class="bottom-container">
-                    <div class="left">
+                    <!-- <div class="left">
                         <EchartContainer ref="EchartContainerRef_3"></EchartContainer>
                     </div>
                     <div class="right">
                         <EchartContainer ref="EchartContainerRef"></EchartContainer>
 
 
-                    </div>
-
+                    </div> -->
+                    <EchartContainer ref="EchartContainerRef"></EchartContainer>
                 </div>
             </div>
         </div>
@@ -56,7 +56,7 @@ export default defineComponent({
         const EchartContainerRef = ref();  //组件实例
         const EchartContainerRef_1 = ref();  //组件实例
         const EchartContainerRef_2 = ref();  //组件实例
-        const EchartContainerRef_3 = ref();  //组件实例
+        // const EchartContainerRef_3 = ref();  //组件实例
         const dataContainer = reactive({
             loading: false,
 
@@ -189,21 +189,54 @@ export default defineComponent({
             });
             EchartContainerRef_1.value.initData({
                
-                xAxis: {
-                    type: "category",
-                    data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+                  tooltip: {
+                    trigger: "item",
+                    formatter: "{a} <br/>{b} : {c}%",
                 },
-                yAxis: {
-                    type: "value",
+                legend: {
+                    show: false,
                 },
                 series: [
                     {
-                        data: [120, 200, 150, 80, 70, 110, 130],
-                        type: "bar",
-                        showBackground: true,
-                        backgroundStyle: {
-                            color: "rgba(180, 180, 180, 0.2)",
+                        name: "Funnel",
+                        type: "funnel",
+                        left: "10%",
+                        top: 60,
+                        bottom: 60,
+                        width: "80%",
+                        min: 0,
+                        max: 100,
+                        minSize: "0%",
+                        maxSize: "100%",
+                        sort: "descending",
+                        gap: 2,
+                        label: {
+                            show: true,
+                            position: "inside",
                         },
+                        labelLine: {
+                            length: 10,
+                            lineStyle: {
+                                width: 1,
+                                type: "solid",
+                            },
+                        },
+                        itemStyle: {
+                            borderColor: "#fff",
+                            borderWidth: 1,
+                        },
+                        emphasis: {
+                            label: {
+                                fontSize: 20,
+                            },
+                        },
+                        data: [
+                            { value: 60, name: "Visit" },
+                            { value: 40, name: "Inquiry" },
+                            { value: 20, name: "Order" },
+                            { value: 80, name: "Click" },
+                            { value: 100, name: "Show" },
+                        ],
                     },
                 ],
             });
@@ -278,58 +311,7 @@ export default defineComponent({
                     },
                 ],
             });
-            EchartContainerRef_3.value.initData({
-                tooltip: {
-                    trigger: "item",
-                    formatter: "{a} <br/>{b} : {c}%",
-                },
-                legend: {
-                    show: false,
-                },
-                series: [
-                    {
-                        name: "Funnel",
-                        type: "funnel",
-                        left: "10%",
-                        top: 60,
-                        bottom: 60,
-                        width: "80%",
-                        min: 0,
-                        max: 100,
-                        minSize: "0%",
-                        maxSize: "100%",
-                        sort: "descending",
-                        gap: 2,
-                        label: {
-                            show: true,
-                            position: "inside",
-                        },
-                        labelLine: {
-                            length: 10,
-                            lineStyle: {
-                                width: 1,
-                                type: "solid",
-                            },
-                        },
-                        itemStyle: {
-                            borderColor: "#fff",
-                            borderWidth: 1,
-                        },
-                        emphasis: {
-                            label: {
-                                fontSize: 20,
-                            },
-                        },
-                        data: [
-                            { value: 60, name: "Visit" },
-                            { value: 40, name: "Inquiry" },
-                            { value: 20, name: "Order" },
-                            { value: 80, name: "Click" },
-                            { value: 100, name: "Show" },
-                        ],
-                    },
-                ],
-            })
+            
 
         });
         return {
@@ -337,7 +319,7 @@ export default defineComponent({
             EchartContainerRef,
             EchartContainerRef_1,
             EchartContainerRef_2,
-            EchartContainerRef_3
+            // EchartContainerRef_3
         };
     },
 });
@@ -385,13 +367,13 @@ export default defineComponent({
                 flex-direction: row;
 
                 width: 100%;
-                height: 320px;
+                height: 300px;
                 margin-top: 30px;
 
                 >.left,
                 >.right {
                     width: 0;
-                    flex: 1 1 0;
+                    flex:1
                 }
 
             }

@@ -3,7 +3,7 @@
     <div class="page-content-box">
       <!-- 广告编辑 -->
       <h1>{{ id ? "编辑" : "新建" }}广告位</h1>
-      <el-form label-width="120px" @submit.native.prevent="save">
+      <el-form label-width="120px" @submit.native.prevent="save" class="mt20">
         <el-form-item label="名称">
           <el-input v-model="model.name"></el-input>
         </el-form-item>
